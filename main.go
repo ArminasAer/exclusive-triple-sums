@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
+	arr := []int{70, 4, 5, 8, 9}
 	tripplyDipply(arr)
 }
 
@@ -15,7 +17,8 @@ func tripplyDipply(arr []int) {
 		return
 	}
 
-	sums := []int{}
+	// sums := []int{}
+	sums := make(map[int]struct{})
 
 	for i := range arr {
 
@@ -31,13 +34,18 @@ func tripplyDipply(arr []int) {
 				b = b - len(arr)
 			}
 
-			sums = append(sums, arr[i]*arr[a]*arr[b])
+			sums[arr[i]*arr[a]*arr[b]] = struct{}{}
 		}
 
 	}
 
 	fmt.Println("Total sums:", len(sums))
 
-	fmt.Println(sums)
+	fmt.Print("**************\n")
+	for k := range sums {
+		fmt.Printf("%v\n", k)
+	}
+	fmt.Print("**************\n")
+
 	return
 }
