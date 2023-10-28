@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	arr := []int{70, 4, 5, 8, 9}
+	arr := []int{1, 4, 5, 8}
 	tripplyDipply(arr)
 }
 
@@ -30,7 +30,7 @@ func tripplyDipply(arr []int) {
 			// a is the second factor in the equation so it's shifted up +1 positions
 			a := n + 1 + i
 
-			// a is the third factor in the equation so it's shifted up +2 positions
+			// b is the third factor in the equation so it's shifted up +2 positions
 			b := n + 2 + i
 
 			// if a or b increase over the size of the array then cycle back to 0
